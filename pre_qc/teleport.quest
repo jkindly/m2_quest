@@ -1,0 +1,30 @@
+quest teleport begin
+	state start begin
+		when login begin
+			cmdchat("Teleport index"..q.getcurrentquestindex())
+		end
+		when info or button begin
+			local i = tonumber(input(cmdchat("Teleport GetInfo")))+1
+			if type(i) != "number" then return end
+			local warp = teleport.warp_kords()
+			if warp[i] == nil then return end
+			pc.warp(warp[i][1], warp[i][2])
+		end
+
+		function warp_kords()
+			return { 
+						{332900, 747100},	--Dolina Orków
+						{435500, 215100},	--Góra Sohan
+						{600300, 686400},	--Piek³o
+						{296200, 546800},	--Pustynia
+						{296200, 546800},	--Drugie Miasto - DO ZMIANY
+						{469700, 964300},	--Shinsoo
+						{969600, 278400},	--Jinno
+						{55700, 157900},	--Chunjo
+						{303800, 26200},	--Las Duchów
+						{1119200, 70300},	--Czerwony Las
+						{128300, 383800},	--Ziemia Urodzaju
+			} 
+		end 
+	end  
+end
