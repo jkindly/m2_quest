@@ -1,0 +1,9 @@
+quest nowy_quest begin
+    state start begin
+        when 20016.chat."Twoj stary" begin
+            say_title("siemka")
+            say("")
+            say("TEST")
+        end
+    end
+end
